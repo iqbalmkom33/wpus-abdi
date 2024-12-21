@@ -27,6 +27,16 @@
             url: hostname+'slug_urls.json',
             success: function(jsondata){
                 let j = JSON.parse(jsondata);
+                let jSlug = j[slug];
+
+                if(jSlug == undefined){
+                    console.log('not registered');
+                }else{
+                    let linkUang = jSlug["linkUang"];
+                    console.log(linkUang);
+                }
+
+
                 //console.log(j['dream-apple']);
                 console.log(j[slug]);
                 //alert(j['giant-happy']['kunci']);
