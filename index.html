@@ -10,10 +10,15 @@
 <body>
     <script>
         $(document).ready(function(){            
-            let curUrl = 'https://'+window.location.hostname+'/';
-            //alert(curUrl);
+            let hostname = 'https://'+window.location.hostname+'/';
+            let curUrl = window.location.href;
 
+            let slug = curUrl.split(hostname)[0];
+
+
+            console.log(hostname);
             console.log(curUrl);
+            console.log(slug);
             /*
             $.ajax({
             type: 'get',
@@ -28,7 +33,7 @@
                 //alert(j['giant-happy']['no']);
             }
             })
-            */
+            /**/
         });
 
 
