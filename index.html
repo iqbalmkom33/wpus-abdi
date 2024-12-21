@@ -20,36 +20,38 @@
             console.log(slug);
             
             $.ajax({
-            type: 'get',
-            crossDomain: true,
-            dataType: 'text',
-            //url: curUrl+'slug_urls.json',
-            url: hostname+'slug_urls.json',
-            success: function(jsondata){
-                let j = JSON.parse(jsondata);
-                let jSlug = j[slug];
+                type: 'get',
+                crossDomain: true,
+                dataType: 'text',
+                //url: curUrl+'slug_urls.json',
+                url: hostname+'slug_urls.json',
+                success: function(jsondata){
+                    let j = JSON.parse(jsondata);
+                    let jSlug = j[slug];
 
-                if(jSlug == undefined){
-                    console.log('not registered');
-                }else{
-                    let linkUang    = jSlug["linkUang"];
-                    let linkArtikel = jSlug["linkArtikel"];
-                    
-                    console.log(linkArtikel);
-                    console.log(linkUang);
+                    if(jSlug == undefined){
+                        console.log('not registered');
+                    }else{
+                        let linkUang    = jSlug["linkUang"];
+                        let linkArtikel = jSlug["linkArtikel"];
+                        
+                        //console.log(linkArtikel);
+                        //console.log(linkUang);
 
-                    let cript = linkUang.split("/").join("wqslash").split(":").join("wqcolon").split("?").join("wqmark").split(".").join("wqdot").split("_").join("wqunder").split("=").join("wqequal");
-                    let urlQs = linkArtikel+"?qs="+cript;
+                        let cript = linkUang.split("/").join("wqslash").split(":").join("wqcolon").split("?").join("wqmark").split(".").join("wqdot").split("_").join("wqunder").split("=").join("wqequal");
+                        let urlQs = linkArtikel+"?qs="+cript;
 
-                    console.log(urlQs);
+                        window.location.href = urlQs;
+
+                        //console.log(urlQs);
+                    }
+
+
+                    //console.log(j['dream-apple']);
+                    //console.log(j[slug]);
+                    //alert(j['giant-happy']['kunci']);
+                    //alert(j['giant-happy']['no']);
                 }
-
-
-                //console.log(j['dream-apple']);
-                console.log(j[slug]);
-                //alert(j['giant-happy']['kunci']);
-                //alert(j['giant-happy']['no']);
-            }
             })
             /**/
         });
