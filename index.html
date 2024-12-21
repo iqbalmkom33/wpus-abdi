@@ -13,13 +13,12 @@
             let hostname = 'https://'+window.location.hostname+'/';
             let curUrl = window.location.href;
 
-            let slug = curUrl.split(hostname)[1].split("/").join("").split("?").join("");
-
+            let slug = curUrl.split(hostname)[1].split("/").join("").split("?").join("").split("=").join("");
 
             console.log(hostname);
             console.log(curUrl);
             console.log(slug);
-            /*
+            
             $.ajax({
             type: 'get',
             crossDomain: true,
@@ -28,7 +27,7 @@
             success: function(jsondata){
                 let j = JSON.parse(jsondata);
                 //console.log(j['dream-apple']);
-                console.log(j);
+                console.log(j[slug]);
                 //alert(j['giant-happy']['kunci']);
                 //alert(j['giant-happy']['no']);
             }
