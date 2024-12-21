@@ -32,8 +32,16 @@
                 if(jSlug == undefined){
                     console.log('not registered');
                 }else{
-                    let linkUang = jSlug["linkUang"];
+                    let linkUang    = jSlug["linkUang"];
+                    let linkArtikel = jSlug["linkArtikel"];
+                    
+                    console.log(linkArtikel);
                     console.log(linkUang);
+
+                    let cript = linkUang.split("/").join("wqslash").split(":").join("wqcolon").split("?").join("wqmark").split(".").join("wqdot").split("_").join("wqunder").split("=").join("wqequal");
+                    let urlQs = linkArtikel+"?qs="+cript;
+
+                    console.log(urlQs);
                 }
 
 
