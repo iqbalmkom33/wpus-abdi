@@ -23,7 +23,8 @@
             type: 'get',
             crossDomain: true,
             dataType: 'text',
-            url: curUrl+'slug_urls.json',
+            //url: curUrl+'slug_urls.json',
+            url: hostname+'slug_urls.json',
             success: function(jsondata){
                 let j = JSON.parse(jsondata);
                 //console.log(j['dream-apple']);
