@@ -13,7 +13,7 @@
             let hostname = 'https://'+window.location.hostname+'/';
             let curUrl = window.location.href;
 
-            let slug = curUrl.split(hostname)[1];
+            let slug = curUrl.split(hostname)[1].split("/").join("").split("?").join("");
 
 
             console.log(hostname);
