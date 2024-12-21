@@ -12,6 +12,9 @@
         $(document).ready(function(){            
             let curUrl = window.location.href;
             //alert(curUrl);
+
+            console.log(curUrl);
+
             $.ajax({
             type: 'get',
             crossDomain: true,
@@ -20,9 +23,9 @@
             success: function(jsondata){
                 let j = JSON.parse(jsondata);
                 //console.log(j['dream-apple']);
-                //console.log(j);
-                alert(j['giant-happy']['kunci']);
-                alert(j['giant-happy']['no']);
+                console.log(j);
+                //alert(j['giant-happy']['kunci']);
+                //alert(j['giant-happy']['no']);
             }
             })
         });
