@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function readTextFile(file) {
+            var rawFile = new XMLHttpRequest();
+            rawFile.open("GET", file, false);
+            rawFile.onreadystatechange = function () {
+                if(rawFile.readyState === 4)  {
+                if(rawFile.status === 200 || rawFile.status == 0) {
+                    var allText = rawFile.responseText;
+                    //console.log(allText);
+                    let j = JSON.parse(allText);
+                    let jSlug = j['glory-angel'];
+
+                    console.log(jSlug);
+                }
+                }
+            }
+            rawFile.send(null);
+        }
+
+        readTextFile("slug_urls.json");
+
+
+    </script>
+</body>
+</html>
